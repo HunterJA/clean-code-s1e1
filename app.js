@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelector(".new-task___text");//Add a new task.
+var taskInput=document.querySelector(".new-task__text");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.querySelector(".incomplete-tasks___list");//ul of #incompleteTasks
-var completedTasksHolder=document.querySelector(".complete-tasks___list");//completed-tasks
+var incompleteTaskHolder=document.querySelector(".incomplete-tasks__list");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".complete-tasks__list");//completed-tasks
 
 
 //New task list item
@@ -47,7 +47,7 @@ var createNewTaskElement=function(taskString){
     editButton.className="button button_edit";
 
     deleteButton.className="button button_delete";
-	deleteButton.className="button__img";
+	deleteButtonImg.className="button__img";
     deleteButtonImg.src='./remove.svg';
 	deleteButtonImg.alt="delete icon";
     deleteButton.appendChild(deleteButtonImg);
@@ -90,7 +90,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".button_edit");
-    var containsClass=listItem.classList.contains("tasks-item_edit-mode");
+    var containsClass=listItem.classList.contains("tasks__item_edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -161,8 +161,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button_edit");
-    var deleteButton=taskListItem.querySelector("button_delete");
+    var editButton=taskListItem.querySelector(".button_edit");
+    var deleteButton=taskListItem.querySelector(".button_delete");
 
 
     //Bind editTask to edit button.
